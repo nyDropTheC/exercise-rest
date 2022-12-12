@@ -22,9 +22,7 @@ const CustomerCreator = ( props ) => {
     } );
 
     const uploadData = ( ) => {
-        console.log ( customerData );
-
-        props.data.addCustomer ( customerData );
+        props.adder ( customerData );
 
         setOpen ( false );
         setCustomerData ( {
