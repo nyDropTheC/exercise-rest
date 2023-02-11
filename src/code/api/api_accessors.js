@@ -1,5 +1,5 @@
 const addCustomer = ( dataRefresh, data ) => {
-    fetch ( 'https://customerrestapp.herokuapp.com/api/customers', {
+    fetch ( 'https://customerrest.herokuapp.com/api/customers', {
         method: 'POST',
         body: JSON.stringify ( data ),
         headers: {
@@ -38,7 +38,7 @@ const removeCustomer = ( dataRefresh, data ) => {
 };
 
 const addTraining = ( dataRefresh, customer, data ) => {
-    fetch ( 'https://customerrestapp.herokuapp.com/api/trainings', {
+    fetch ( 'https://customerrest.herokuapp.com/api/trainings', {
         method: 'POST',
         body: JSON.stringify ( {
             ...data,
@@ -56,7 +56,7 @@ const addTraining = ( dataRefresh, customer, data ) => {
 };
 
 const removeTraining = ( dataRefresh, data ) => {
-    fetch ( `https://customerrestapp.herokuapp.com/api/trainings/${data.id}`, {
+    fetch ( `https://customerrest.herokuapp.com/api/trainings/${data.id}`, {
         method: 'DELETE'
     } )
         .then ( resp => {

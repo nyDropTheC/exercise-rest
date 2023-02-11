@@ -22,16 +22,18 @@ import dayjs from 'dayjs';
 const Scheduling = props => {
     const currentDate = dayjs ( ).toDate ( );
 
-    const training = props.state.map ( data => {
-        const title = `${data.activity} / ${data.customer.firstname} ${data.customer.lastname}`;
-        const from = dayjs ( data.date )
-        const to = dayjs ( data.date ).add ( data.duration, 'm' );
-        return {
-            title: title,
-            startDate: from.toDate ( ),
-            endDate: to.toDate ( )
-        };
-    } );
+    const training = props.state
+        .filter ( data => data.customer !== null )
+        .map ( data => {
+            const title = `${data.activity} / ${data.customer.firstname} ${data.customer.lastname}`;
+            const from = dayjs ( data.date )
+            const to = dayjs ( data.date ).add ( data.duration, 'm' );
+            return {
+                title: title,
+                startDate: from.toDate ( ),
+                endDate: to.toDate ( )
+            };
+        } );
 
     return <Paper>
             <Scheduler

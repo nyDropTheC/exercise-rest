@@ -34,24 +34,7 @@ const Training = props => {
         cellRenderer: ( data ) => <TrainingRemover data = { data.data } deleter = { props.data.removeTraining } />
     } ];
 
-    /*
-        activity 
-: 
-"Spinning"
-customer
-: 
-{id: 1, firstname: 'John', lastname: 'Johnson', streetaddress: '5th Street', postcode: '23110', …}
-date
-: 
-"2022-12-03T01:54:41.137+00:00"
-duration
-: 
-60
-id
-: 
-16
-    */
-
+    
     const sortableMemo = {
         sortable: true,
         filter: true,
